@@ -1,14 +1,14 @@
-import { Sequelize } from "sequelize";
+import 'dotenv/config'
+import { Sequelize, Dialect } from "sequelize";
 
 export const database = new Sequelize({
-    dialect: "postgres",
-    host: "localhost",
-    port: 5432,
-    database: "cloneflix_development",
-    username: "postgres",
-    password: "19941183",
+    dialect: process.env.DB_DIALECT as Dialect,
+    host: process.env.DB_HOST,
+    port : Number(process.env.DB_PORT),
+    database: process.env.DB_NAME,
+    username: process.env.DB_USER,
+    password: process.env.DB_PWD,
     define: {
-        underscored: true
+        underscored: true        
     }
-
 })
