@@ -1,10 +1,9 @@
 import { Category } from './Category';
 import { Movie } from './Movie';
 
-Category.hasMany(Movie);
+Category.hasMany(Movie),
 
-Movie.belongsTo(Category);
-
+Movie.belongsTo(Category)
 
 export {
   Category,
