@@ -1,7 +1,8 @@
 import { ResourceWithOptions } from "adminjs";
-import { Category, Movie } from "../../models";
+import { Category, Movie, MovieFile } from "../../models";
 import { categoryResourceOptions } from "./category";
 import { movieResourceOptions } from "./movie";
+import { movieFileResourceOptions } from "./movieFile";
 
 export const adminJsResources: ResourceWithOptions[] = [
   {
@@ -11,5 +12,9 @@ export const adminJsResources: ResourceWithOptions[] = [
   {
     resource: Movie,
     options: movieResourceOptions
+  },
+  {
+    resource: MovieFile,
+    options: movieFileResourceOptions
   }
 ]
