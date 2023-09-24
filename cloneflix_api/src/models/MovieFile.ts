@@ -7,14 +7,12 @@ export interface MovieFile{
     synopsis: string    
     videoUrl: string
     secondsLong: number
-    movieId: number
+    movieId: number    
 }
 
-export interface MovieFileCreationAttributes
-  extends Optional<MovieFile, 'id' | 'videoUrl' | 'secondsLong' > {}
+export interface MovieFileCreationAttributes extends Optional<MovieFile, 'id' | 'videoUrl' | 'secondsLong' > {}
 
-export interface MovieFileInstance
-extends Model<MovieFile, MovieFileCreationAttributes>, MovieFile{}
+export interface MovieFileInstance extends Model<MovieFile, MovieFileCreationAttributes>, MovieFile{}
 
 export const MovieFile = database.define<MovieFileInstance, MovieFile>('MovieFile', {
     id: {
@@ -43,5 +41,5 @@ export const MovieFile = database.define<MovieFileInstance, MovieFile>('MovieFil
       references: { model: 'movies', key: 'id' },
       onUpdate: 'CASCADE',
       onDelete: 'RESTRICT'
-    },     
-  })
+    }      
+  })  

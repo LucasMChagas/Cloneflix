@@ -5,13 +5,12 @@ import {adminJs, adminJsRouter} from "./adminjs"
 
 const app = express();
 
-
 app.use(express.static("public"));
 app.use(adminJs.options.rootPath, adminJsRouter)
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, ()=>{
+app.listen(PORT, ()=>{ 
     database.authenticate().then(()=>{
         console.log("Database connection successfull")
     }).catch((error)=>{
