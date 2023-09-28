@@ -1,5 +1,4 @@
 import AdminJS from "adminjs";
-import { AdminJSOptions } from "adminjs";
 import AdminJsExpress from "@adminjs/express";
 import AdminJsSequelize from "@adminjs/sequelize";
 import { database } from "../database";
