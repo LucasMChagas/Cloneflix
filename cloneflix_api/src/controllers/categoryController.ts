@@ -23,7 +23,7 @@ export const categoryController = {
         const { id } = req.params
 
         try {
-            const category = await categoryService.findByIdWithCourses(id)
+            const category = await categoryService.findByIdWithMovies(id)
             return res.json(category)
         } catch (err) {
             if (err instanceof Error) {
@@ -31,7 +31,6 @@ export const categoryController = {
             }
         }
     }
-
 }
 
 

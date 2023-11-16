@@ -3,10 +3,10 @@ import { Movie } from './Movie';
 import { MovieFile } from './MovieFile';
 import { User } from './User';
 
-Category.hasMany(Movie, { as: 'courses' });
+Category.hasMany(Movie, { as: 'movies' });
 
 Movie.belongsTo(Category);
-Movie.hasMany(MovieFile);
+Movie.hasMany(MovieFile, {as: 'files'});
 
 MovieFile.belongsTo(Movie)
 

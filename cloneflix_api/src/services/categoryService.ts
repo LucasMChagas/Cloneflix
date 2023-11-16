@@ -19,15 +19,15 @@ export const categoryService = {
       }
     },
 
-    findByIdWithCourses: async (id: string) => {
-      const categoryWithCourses = await Category.findByPk(id, {
+    findByIdWithMovies: async (id: string) => {
+      const categoryWithMovies = await Category.findByPk(id, {
         attributes: ['id', 'name'],
         include: {
-          association: 'courses',
+          association: 'movies',
           attributes: ['id', 'name', 'synopsis', ['thumbnail_url', 'thumbnailUrl']],
         }
       })
   
-      return categoryWithCourses
+      return categoryWithMovies
     }
   }
