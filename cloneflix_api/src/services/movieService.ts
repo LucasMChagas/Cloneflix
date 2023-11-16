@@ -20,4 +20,17 @@ export const movieService = {
   
       return movieWithFiles
     },
+
+    getRandomFeaturedMovie: async () => {
+      const featuredMovie = await Movie.findAll({
+        attributes: ['id', 'name', 'synopsis', ['thumbnail_url', 'thumbnailUrl']],
+        where: {
+          featured: true
+        }
+      })
+  
+      const randomFeaturedMovies = featuredMovie.sort(() => 0.5 - Math.random())
+  
+      return randomFeaturedMovies.slice(0, 3)
+    },
   }
