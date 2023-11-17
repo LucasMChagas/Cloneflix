@@ -33,4 +33,13 @@ export const movieService = {
   
       return randomFeaturedMovies.slice(0, 3)
     },
+
+    getTopTenNewest: async () => {
+      const movies = await Movie.findAll({
+        limit: 10,
+        order: [['created_at', 'DESC']]
+      })
+  
+      return movies
+    }
   }
