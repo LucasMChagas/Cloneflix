@@ -3,7 +3,7 @@ import { userService } from '../services/userService'
 import { jwtService } from '../services/jwt-service'
 
 const authController = {
-  register: async (req: Request, res: Response) => {
+    register: async (req: Request, res: Response) => {
     const { firstName, lastName, phone, birth, email, password } = req.body
 
     try {
@@ -50,7 +50,7 @@ const authController = {
           return res.status(401).json({ message: 'Senha incorreta' })
         }
 
-        const payload = {
+				const payload = {
           id: user.id,
           firstName: user.firstName,
           email: user.email

@@ -9,8 +9,8 @@ export const categoryController = {
         const [page, perPage] = getPaginationParams(req.query)
 
         try {
-            const paginatedCategories = await categoryService.findAllPaginated(page, perPage)
-
+            const paginatedCategories = await categoryService.findAllPaginated(page, perPage)            
+            
             return res.json(paginatedCategories)
 
         } catch (error) {
